@@ -1,0 +1,11 @@
+<!-- 
+    loop en jquery
+    1.- a un div se le anima (en este caso sube y baja 4px) en x tiempo
+    2.- en 2x tiempo se repite la funcion ("botagaviota" en este caso) por lo que se repite la accion 
+-->
+<script type="text/javascript"> 
+    function loopAnimacion(){
+        jQuery(".XXX").animate({'margin-top' : "-=4px"},1200).animate({ 'margin-top' :"+=4px"},1200);
+        setTimeout("loopAnimacion()",2400);
+    };
+</script>

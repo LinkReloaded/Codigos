@@ -1,0 +1,62 @@
+<!-- 
+	Cuando el documento carga, ejecuta el contenido que se muestra (no conflict) 
+-->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+
+    });
+</script>
+
+<!--  
+	esta function ejecuta codigo dependiendo de algun valor que se le pasa por GET en la URL
+	1.- se crea una variable "direccion" en donde se divide la url segun el o los caracteres seleccionados "#"
+	2.- se selecciona con cual segmento de la url se dividira... en este caso en un #
+	3.- despues hacemos un if en donde evaluamos si la url contiene el valor que buscamos, en cuyo caso ejecutamos el codigo 
+-->
+<script type="text/javascript">
+	function cambiaSegunDatoGet(){
+		var direccion = document.URL.split('#')[1];
+		if (direccion == 'eldatoquesolicitamos'){
+			alert('funciona');
+		};
+	}
+</script>
+
+<!--
+	animacion de entrada en jQuery
+	1.- a un div de entrada con un estilo css determinado, se le aplica otro estilo css y se le anima para que el cambio sea fluido */
+-->
+<script type="text/javascript">		
+	function animaInicio(){
+		jQuery('#XXX1').delay(1500).animate({'margin-top' :'90px', 'margin-left' :'100px', "opacity": "toggle"}, 400);
+		jQuery('#XXX2').delay(1500).animate({'margin-top' :'2px', 'margin-left' :'5px', "opacity": "toggle"}, 400);
+	}	
+</script>
+
+<!-- 
+	Condicional en caso de tener una secuencia de caracteres a evaluar 
+-->
+<script type="text/javascript">
+	var d = parseInt(a.split('-')[0]); 						/* busca en la URL antes del caracter "-", el resultado inluirlo en la variable "d" */
+	if((d>1 && d<19) || (d>47 && d<56)){ 					/* si el resultado es 2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18 o  */
+		d="bano";												
+	}else if( (d>18 && d<48)){								/* si el resultado esta entre el 18 y el 48 (sin incluirlos) devuelve lo siguiente */
+		d="cocina";												
+	}else if((d>55 && d<64) || d==70 || d==71 || d==72){	/* si el resultado esta entre el 55 y el 64 (sin incluirlos) o si es 70, 71, 72 devuelve lo siguiente */
+		d="gas";												
+	}else{																							
+		d=null;													
+	}	
+</script>	
+
+<!-- 
+	if en javascript con un array de datos 
+-->
+<script type="text/javascript">	
+	$datos = Array('casa-vasconia-galeria','casa-cantabria-galeria','casa-navarra-galeria','casa-catania-galeria','casa-tarragona-galeria');<? // estos son los datos que busco?>
+	for (var i = 0; i < $datos.lenght; i++ ){
+		if($datos [i] == $thispage){ <? //si los valores declarados arriba coincide con el valor de la variable $thispage (declarado al comienzo de cada pagina) imprime el contenido ?>
+			<? // HACE ALGO ?>
+		}
+	}
+</script>

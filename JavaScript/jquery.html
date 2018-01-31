@@ -1,0 +1,71 @@
+<!-- Condicional en caso de exista el elemento con cierto ID muestra el contenido -->	
+<script type="text/javascript">
+	if(jQuery('#carru-bnr-home').length > 0){
+		<? /* CODIGO ACA */ ?>
+	}
+</script>	
+
+<!-- reemplaza un codigo html por otro -->
+<script type="text/javascript">
+	function reemplazaCodigo(){
+		jQuery('#txtSupOtros a[href]').each(function(){ <? //identifica los vinculos de los a del div #txtSupOtros ?>
+			var actual = jQuery(this).attr("href"); <? //obten el href y conviertelo en variable ?>
+			var pais = '#gen'; <? //creo una nueva veriable con el dato #gen ?>
+			var nuevolink = (actual + pais); <? //fusiono las dos variables ?>
+			jQuery(this).attr("href", nuevolink); <? //reimprime el dato obtenido con la modificacion realizada ?>
+		});						
+	}	
+</script>
+
+<!-- submenu simple en jQuery: en un elemento de menu "a" se  genera un div oculto que se muestra/oculta al hacer rollover sobre el mismo -->
+<script type="text/javascript">
+	function cambiaMenu(){
+		jQuery('.menu1').mouseover(function(){
+			jQuery('.menu2').show();
+		});
+		jQuery('.menuWrapper').mouseleave(function(){
+			jQuery('.menu2').hide();
+		});
+	}
+</script>
+<style type="text/css">
+	.menuWrapper {background:gray; padding:5px; width:70px}
+	.menuWrapper div {height:100px; width:70px}
+	.menu1 {background:red}
+	.menu2 {background:blue; display:none}
+</style>
+<div class="menuWrapper">
+	<div class="menu1">Menu 1</div>
+	<div class="menu2">Menu 2</div>
+</div>
+
+
+<!-- estado Hover/Out en un div -->
+<script type="text/javascript">
+	function hoverout(){
+		jQuery('.fotos .op01').hover(
+			function () {
+				jQuery('.fotos .op01 .foto-sel').animate({'opacity' :'0.5'}, 150);
+			}, 
+			function () {
+				jQuery('.fotos .op01 .foto-sel').animate({'opacity' :'1'}, 150);
+			}
+		);
+	}	
+</script>
+
+
+<!--
+	animacion de hover en jQuery (se debe poner la function en el documente ready para que este disponible)
+	1.- a un div determinado se le aplica una animacion al hacer hover
+	2.- se le aplican los mismos estilos que tenia por defecto para que quede como al inicio
+-->
+<script type="text/javascript">	
+	function animac() { 
+		jQuery('#XXX').hover(function(){
+			jQuery('#XXX').animate({'margin-top' :'140px', 'margin-left' :'68px'}, 150);
+		}, function(){
+			jQuery('#XXX').animate({'margin-top' :'145px', 'margin-left' :'65px'}, 150);
+		});
+	}
+</script>

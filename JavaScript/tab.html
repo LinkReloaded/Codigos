@@ -1,0 +1,38 @@
+<!--
+    TAB SIMPLE, el codigo oculta todos los tabs y muestra el primero, despues oculta todos los tabs (reset) y despues muestra el tab al que se le hizo click
+-->
+<script type="text/javascript">     
+    function iniciaTabs(){
+        resetTabs();
+        jQuery('#tabpage_1').show();        
+    }
+    function resetTabs(){
+        jQuery('#tabpage_1, #tabpage_2, #tabpage_3, #tabpage_4, #tabpage_5, #tabpage_6').hide();        
+    }
+    jQuery(function() {
+        jQuery('#tabHeader_1').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_1').show();
+        });
+        jQuery('#tabHeader_2').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_2').show();
+        });
+        jQuery('#tabHeader_3').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_3').show();
+        });
+        jQuery('#tabHeader_4').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_4').show();
+        });
+        jQuery('#tabHeader_5').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_5').show();
+        });
+        jQuery('#tabHeader_6').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_6').show();
+        });
+    });
+</script>
