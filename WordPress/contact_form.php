@@ -30,5 +30,5 @@
 	SMTP Port: 25
 	Encryption : (X) Use TLS encryption. This is not the same as STARTTLS. For most servers SSL is the recommended option.
 	Authentication: (X) Yes: Use SMTP authentication.
-	Username: AKIAJNSZVLKGI7YZUTCA
-	Password: AhyyYtNfe2sQ3lf4ItKGYe1/pXw2w0prgr4jGK+CiJj3
+	Username: *****
+	Password: *****
