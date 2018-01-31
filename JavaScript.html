@@ -1,0 +1,447 @@
+<!--
+    TAB SIMPLE, el codigo oculta todos los tabs y muestra el primero, despues oculta todos los tabs (reset) y despues muestra el tab al que se le hizo click
+-->
+<script type="text/javascript">     
+    function iniciaTabs(){
+        resetTabs();
+        jQuery('#tabpage_1').show();        
+    }
+    function resetTabs(){
+        jQuery('#tabpage_1, #tabpage_2, #tabpage_3, #tabpage_4, #tabpage_5, #tabpage_6').hide();        
+    }
+    jQuery(function() {
+        jQuery('#tabHeader_1').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_1').show();
+        });
+        jQuery('#tabHeader_2').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_2').show();
+        });
+        jQuery('#tabHeader_3').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_3').show();
+        });
+        jQuery('#tabHeader_4').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_4').show();
+        });
+        jQuery('#tabHeader_5').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_5').show();
+        });
+        jQuery('#tabHeader_6').click(function(event) {
+            resetTabs();
+            jQuery('#tabpage_6').show();
+        });
+    });
+</script>
+
+
+<!-- 
+    shadowbox IMG autocarga
+    1.- despues de llamar al SB se inicia con el siguiente script 
+-->
+<script type="text/javascript">
+    window.onload = function() {
+        Shadowbox.open({
+            content:    'XXXXX/imagenes/img.jpg', <? // ruta de la imagen ?>
+            player:     "img",  <? // player de la imgen ?>
+            height:     500,    <? // alto de la imagen ?>
+            width:      1000    <? // ancho de la imagen ?>
+        });
+    };
+</script>
+    
+<!--
+    shadowbox URL abre al click
+    1.- poner el "REL" en la etiqueta a seleccionada, definir el ancho y alto de acuerdo al documento a abrir
+-->  
+<a href="#" rel="shadowbox;width=442;height=403">XXX</a>
+
+
+    <script type="text/javascript">
+    	// <![CDATA[
+        var ipad = (/ipad/i.test(navigator.userAgent.toLowerCase()));
+        var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()))
+        if (ipad) {
+            document.location = "http://sitioipad";
+        } else if (mobile) {
+            document.location = "http://sitiomobile";
+     	}  else {
+            document.location = "http://sitionormal";
+     	}
+    	// ]]>
+    </script>	
+	
+	<html>
+		<head></head>
+		<body>
+			<script type="text/javascript">window.location="http://www.renault.cl/new-symbol/";</script>
+		</body>
+	</html>
+	
+	<!-- 
+    loop en jquery
+    1.- a un div se le anima (en este caso sube y baja 4px) en x tiempo
+    2.- en 2x tiempo se repite la funcion ("botagaviota" en este caso) por lo que se repite la accion 
+-->
+<script type="text/javascript"> 
+    function loopAnimacion(){
+        jQuery(".XXX").animate({'margin-top' : "-=4px"},1200).animate({ 'margin-top' :"+=4px"},1200);
+        setTimeout("loopAnimacion()",2400);
+    };
+</script>
+
+<!-- Condicional en caso de exista el elemento con cierto ID muestra el contenido -->	
+<script type="text/javascript">
+	if(jQuery('#carru-bnr-home').length > 0){
+		<? /* CODIGO ACA */ ?>
+	}
+</script>	
+
+<!-- reemplaza un codigo html por otro -->
+<script type="text/javascript">
+	function reemplazaCodigo(){
+		jQuery('#txtSupOtros a[href]').each(function(){ <? //identifica los vinculos de los a del div #txtSupOtros ?>
+			var actual = jQuery(this).attr("href"); <? //obten el href y conviertelo en variable ?>
+			var pais = '#gen'; <? //creo una nueva veriable con el dato #gen ?>
+			var nuevolink = (actual + pais); <? //fusiono las dos variables ?>
+			jQuery(this).attr("href", nuevolink); <? //reimprime el dato obtenido con la modificacion realizada ?>
+		});						
+	}	
+</script>
+
+<!-- submenu simple en jQuery: en un elemento de menu "a" se  genera un div oculto que se muestra/oculta al hacer rollover sobre el mismo -->
+<script type="text/javascript">
+	function cambiaMenu(){
+		jQuery('.menu1').mouseover(function(){
+			jQuery('.menu2').show();
+		});
+		jQuery('.menuWrapper').mouseleave(function(){
+			jQuery('.menu2').hide();
+		});
+	}
+</script>
+<style type="text/css">
+	.menuWrapper {background:gray; padding:5px; width:70px}
+	.menuWrapper div {height:100px; width:70px}
+	.menu1 {background:red}
+	.menu2 {background:blue; display:none}
+</style>
+<div class="menuWrapper">
+	<div class="menu1">Menu 1</div>
+	<div class="menu2">Menu 2</div>
+</div>
+
+
+<!-- estado Hover/Out en un div -->
+<script type="text/javascript">
+	function hoverout(){
+		jQuery('.fotos .op01').hover(
+			function () {
+				jQuery('.fotos .op01 .foto-sel').animate({'opacity' :'0.5'}, 150);
+			}, 
+			function () {
+				jQuery('.fotos .op01 .foto-sel').animate({'opacity' :'1'}, 150);
+			}
+		);
+	}	
+</script>
+
+
+<!--
+	animacion de hover en jQuery (se debe poner la function en el documente ready para que este disponible)
+	1.- a un div determinado se le aplica una animacion al hacer hover
+	2.- se le aplican los mismos estilos que tenia por defecto para que quede como al inicio
+-->
+<script type="text/javascript">	
+	function animac() { 
+		jQuery('#XXX').hover(function(){
+			jQuery('#XXX').animate({'margin-top' :'140px', 'margin-left' :'68px'}, 150);
+		}, function(){
+			jQuery('#XXX').animate({'margin-top' :'145px', 'margin-left' :'65px'}, 150);
+		});
+	}
+</script>
+
+
+<!-- Iguala el alto de los div en una pagina -->  
+<script type="text/javascript"> 
+    (function($) {
+        $.fn.equalHeights = function(minHeight, maxHeight) {
+            tallest = (minHeight) ? minHeight : 0;
+            this.each(function() {
+                if($(this).height() > tallest) {
+                    tallest = $(this).height();
+                }
+            });
+            if((maxHeight) && tallest > maxHeight) tallest = maxHeight;
+            return this.each(function() {
+                $(this).height(tallest).css("overflow","auto");
+            });
+        }
+    })(jQuery);
+    //MENU MODELOS
+    $(document).ready(function() {
+        //EQUALHEIGHTS
+        $(".col-col").equalHeights();
+    }); 
+</script>
+
+<!-- 
+	Cuando el documento carga, ejecuta el contenido que se muestra (no conflict) 
+-->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+
+    });
+</script>
+
+<!--  
+	esta function ejecuta codigo dependiendo de algun valor que se le pasa por GET en la URL
+	1.- se crea una variable "direccion" en donde se divide la url segun el o los caracteres seleccionados "#"
+	2.- se selecciona con cual segmento de la url se dividira... en este caso en un #
+	3.- despues hacemos un if en donde evaluamos si la url contiene el valor que buscamos, en cuyo caso ejecutamos el codigo 
+-->
+<script type="text/javascript">
+	function cambiaSegunDatoGet(){
+		var direccion = document.URL.split('#')[1];
+		if (direccion == 'eldatoquesolicitamos'){
+			alert('funciona');
+		};
+	}
+</script>
+
+<!--
+	animacion de entrada en jQuery
+	1.- a un div de entrada con un estilo css determinado, se le aplica otro estilo css y se le anima para que el cambio sea fluido */
+-->
+<script type="text/javascript">		
+	function animaInicio(){
+		jQuery('#XXX1').delay(1500).animate({'margin-top' :'90px', 'margin-left' :'100px', "opacity": "toggle"}, 400);
+		jQuery('#XXX2').delay(1500).animate({'margin-top' :'2px', 'margin-left' :'5px', "opacity": "toggle"}, 400);
+	}	
+</script>
+
+<!-- 
+	Condicional en caso de tener una secuencia de caracteres a evaluar 
+-->
+<script type="text/javascript">
+	var d = parseInt(a.split('-')[0]); 						/* busca en la URL antes del caracter "-", el resultado inluirlo en la variable "d" */
+	if((d>1 && d<19) || (d>47 && d<56)){ 					/* si el resultado es 2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18 o  */
+		d="bano";												
+	}else if( (d>18 && d<48)){								/* si el resultado esta entre el 18 y el 48 (sin incluirlos) devuelve lo siguiente */
+		d="cocina";												
+	}else if((d>55 && d<64) || d==70 || d==71 || d==72){	/* si el resultado esta entre el 55 y el 64 (sin incluirlos) o si es 70, 71, 72 devuelve lo siguiente */
+		d="gas";												
+	}else{																							
+		d=null;													
+	}	
+</script>	
+
+<!-- 
+	if en javascript con un array de datos 
+-->
+<script type="text/javascript">	
+	$datos = Array('casa-vasconia-galeria','casa-cantabria-galeria','casa-navarra-galeria','casa-catania-galeria','casa-tarragona-galeria');<? // estos son los datos que busco?>
+	for (var i = 0; i < $datos.lenght; i++ ){
+		if($datos [i] == $thispage){ <? //si los valores declarados arriba coincide con el valor de la variable $thispage (declarado al comienzo de cada pagina) imprime el contenido ?>
+			<? // HACE ALGO ?>
+		}
+	}
+</script>
+
+<!-- ********************************
+	 COMPARTIDOR DE FB Y TW SIMPLE 
+	 ******************************** -->
+
+<!-- 1.- inlcuyo el OPENGRAPH -->
+<meta property="fb:app_id" content="" /><? /* en la seccion desarrolladores de FB crear una nueva apliacion (puede ser un like) */?>
+<meta property="fb:admins" content="" /><? /* Poner su identificacion de fb aqui */?>
+<meta property="og:url" content=""/><? /*URL actual*/?>
+<meta property="og:title" content=""/><? /*TITULO del compartir*/ ?>
+<meta property="og:description" content=""/><? /*TEXTO del compartir*/ ?>
+<meta property="og:type" content="article" />
+<meta property="og:image" content=""/><? /*IMAGEN para compartir*/ ?>
+
+<!-- 2.- inlcuyo el JAVASCRIPT -->
+<script language="JavaScript1.2">
+    function openwindow(url) {
+        window.open(url,"share","menubar=1,resizable=1,width=650,height=480");
+    }
+</script>
+
+<!-- 3.- inlcuyo los BOTONES -->
+<div class="btnFB">
+    <a href="javascript:openwindow('https://www.facebook.com/sharer.php?u=URL-A-COMPARTIR&t='+ encodeURIComponent('MENSAJE FACEBOOK'))" >
+        PONER IMAGEN O TEXTO AQUI
+    </a>
+</div>
+<div class="btnTW">
+    <a href="javascript:openwindow('https://twitter.com/intent/tweet?url='+window.location.href+'&text=' + encodeURIComponent('MENSAJE TWITTER 140 char - URL'))" >
+        PONER IMAGEN O TEXTO AQUI    
+    </a>
+</div>
+
+<!-- ********************************
+	 TWITTER
+	 ******************************** -->
+<!-- boton imagen social twitter, no olvidar revisar la URL y las dimensiones de la imagen -->
+<div class="TW_btn">
+	<a rel="nofollow" title="Twittear esto"  href="http://twitter.com/home/?status=XXXXXXXXXXXXXXXXXXXXXXXXXXX" target="_blank">
+		<img src="<? bloginfo('template_url');?>/img/ic_TWloop.png" width="20" height="20" />
+	</a>
+</div>
+
+<!-- boton social twitter dinamico -->
+<div class="btn_TW">
+	<a 
+		href="https://twitter.com/share" 
+		class="twitter-share-button" 
+		data-url="<? the_permalink(); ?>" 
+		data-text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" 
+		data-lang="es" 
+		data-hashtags="XXXHASHTAGXXX">
+		Twittear
+	</a>
+	<script>
+		!function(d,s,id){
+			var js,fjs=d.getElementsByTagName(s)[0];
+			if(!d.getElementById(id)){
+				js=d.createElement(s);
+				js.id=id;js.src="//platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js,fjs);
+			}
+		}(document,"script","twitter-wjs");
+	</script>
+</div>
+
+<!-- ********************************
+	 PINTEREST 
+	 ******************************** -->
+<!-- boton de pinterest -->
+<div style="float:left; width:110px;">
+    <a 
+	class="pin-it-button" 
+	href="http://pinterest.com/pin/create/button/
+	?url=<? the_permalink(); ?>
+	&media=<? $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );  echo $thumb['0']; ?>
+	&description=<? the_title(); ?>">
+		<img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" />
+	</a>
+</div>
+<!-- no olvidar poner eso al final del body -->
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+
+<!-- Acordeon comun en jQuery -->
+<script type="text/javascript">
+    function acordeonPost(){
+        jQuery("dd").hide();
+        jQuery("#primero").slideToggle("slow");
+        jQuery("dt a").click(function(){        
+            jQuery(this).parent().next().siblings("dd:visible").slideUp("slow");
+            jQuery(this).parent().next().slideToggle("slow");
+            jQuery(this).parent().siblings("dt").addClass("marcado");
+            jQuery(this).parent().next().siblings("dt").toggleClass("marcado");
+            return false;
+        });     
+        jQuery("#subacordeon dd").hide();
+        jQuery("#subacordeon a").click(function(){      
+            jQuery(this).parent().next().siblings("dd:visible").slideUp("slow");
+        return false;
+        });     
+    }
+</script>
+<div class="accordeon">
+    <dl>
+        <dt class="marcado"><a href="#">TITULO DEL ACORDEON</a></dt>
+        <dd id="primero">
+            <div class="cont">
+                dato
+            </div>
+        </dd>
+        <!-- =================================================== -->
+        <dt><a href="#">TITULO DEL ACORDEON</a></dt>
+        <dd>
+            <div class="cont">
+                dato
+            </div>
+        </dd>
+        <!-- =================================================== -->
+        <dt><a href="#">TITULO DEL ACORDEON</a></dt>
+        <dd>
+            <div class="cont">
+                dato
+            </div>
+        </dd>
+        <!-- =================================================== -->
+    </dl>
+</div>
+
+<!--
+    ACORDEON MODIFICADO:
+        Permite ampliar el bloque dependiendo del click en una pagina previa
+        Autor: Hector
+        UTILICE EL SIGUIENTE CODIGO DE ACORDEON EN LA PAGINA DE LLEGADA 
+-->
+<div id="accordeon">
+    <dl>
+        <dt><a href="/dev/">titulo 01</a></dt>
+        <dd>
+            <div class="acc_cont">CONTENIDO AQUI</div>
+        </dd>
+        <dt><a href="/dev/">titulo 02</a></dt>
+        <dd>
+            <div class="acc_cont">CONTENIDO AQUI</div>  
+        </dd>
+        <dt><a href="/dev/">titulo 03</a></dt>
+        <dd>
+            <div class="acc_cont">CONTENIDO AQUI</div>
+        </dd>
+        <dt><a href="/dev/">titulo 04</a></dt>
+        <dd>
+            <div class="acc_cont">CONTENIDO AQUI</div>
+        </dd>
+    </dl>
+</div>
+
+<!-- UTILICE EL SIGUIENTE CODIGO EN LA PAGINA DE PARTIDA -->
+<a href="MI_URL_DE_DESTINO&ver=3">acordeon link 01</a>
+<a href="MI_URL_DE_DESTINO&ver=1">acordeon link 02</a>
+<a href="MI_URL_DE_DESTINO&ver=2">acordeon link 03</a>
+<a href="MI_URL_DE_DESTINO&ver=2">acordeon link 04</a>
+
+<!-- UTILICE EL SIGUIENTE CODIGO EN LA CABECERA DEL SITIO -->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        var ver='';
+        <? if(isset($_GET['ver'])){ ?>
+            ver='<?=$_GET['ver']?>';
+        <? } ?>
+        ver=parseInt(ver);
+        if(ver!=""){
+            jQuery("#accordeon").find("dt:eq("+(ver-1)+")").addClass("marcado");
+            jQuery("#accordeon").find("dd:eq("+(ver-1)+")").attr("id","primero");
+        }
+        jQuery("dd").hide();
+        jQuery("#primero").slideToggle("slow");
+        jQuery("dt a").click(function(){        
+            jQuery(this).parent().next().siblings("dd:visible").slideUp("slow");
+            jQuery(this).parent().next().slideToggle("slow");
+            jQuery(this).parent().siblings("dt").addClass("marcado");
+            jQuery(this).parent().next().siblings("dt").toggleClass("marcado");
+            return false;
+        });
+        jQuery("#subacordeon dd").hide();
+        jQuery("#subacordeon a").click(function(){      
+            jQuery(this).parent().next().siblings("dd:visible").slideUp("slow");
+            return false;
+        });
+    });
+</script>
+
+
+
+

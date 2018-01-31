@@ -1,3 +1,12 @@
+<!-- poner un script en duro -->
+{literal} 
+<script> 
+	
+	/* pegar codigo javascript acá */
+
+</script>
+{/literal}
+
 <!-- prestashop IF si estoy en la pagina de productos -->
 {if $page_name == 'product'} <!--ALGO--> {/if}
 
