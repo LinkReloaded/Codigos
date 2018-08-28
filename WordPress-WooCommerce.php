@@ -21,4 +21,4 @@
         }
         wp_reset_postdata();
     ?>
-</ul><!--/.products-->
+</ul><!-- /.products -->
