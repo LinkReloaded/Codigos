@@ -1,8 +1,8 @@
 <!-- poner un script en duro -->
-{literal} 
-<script> 
-	
-	/* pegar codigo javascript ac� */
+{literal}
+<script>
+
+  /* pegar codigo javascript acÃ¡ */
 
 </script>
 {/literal}
@@ -27,5 +27,5 @@ var mivariable = {$category->id};
 
 <!-- identificar un producto y poner codigo en el -->
 {if Tools::getValue('id_product') == [ID DEL PRODUCTO] }
-	soy el producto {Tools::getValue('id_product')|escape:'html':'UTF-8'} [<-- obtiene el id del producto ]
+  soy el producto {Tools::getValue('id_product')|escape:'html':'UTF-8'} [<-- obtiene el id del producto ]
 {/if}

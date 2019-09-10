@@ -1,0 +1,124 @@
+<!-- Cuando el documento carga, ejecuta el contenido que se muestra (no conflict) -->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+
+  });
+</script>
+
+
+<!-- Condicional en caso de exista el elemento con cierto ID muestra el contenido -->
+<script type="text/javascript">
+  if(jQuery('#carru-bnr-home').length > 0){
+    <? /* CODIGO ACA */ ?>
+  }
+</script>
+
+
+<!-- reemplaza un codigo html por otro -->
+<script type="text/javascript">
+  function reemplazaCodigo(){
+    jQuery('#txtSupOtros a[href]').each(function(){ <? //identifica los vinculos de los a del div #txtSupOtros ?>
+      var actual = jQuery(this).attr("href"); <? //obten el href y conviertelo en variable ?>
+      var pais = '#gen'; <? //creo una nueva veriable con el dato #gen ?>
+      var nuevolink = (actual + pais); <? //fusiono las dos variables ?>
+      jQuery(this).attr("href", nuevolink); <? //reimprime el dato obtenido con la modificacion realizada ?>
+    });
+  }
+</script>
+
+
+<!--
+    loop en jquery
+    1.- a un div se le anima (en este caso sube y baja 4px) en x tiempo
+    2.- en 2x tiempo se repite la funcion ("botagaviota" en este caso) por lo que se repite la accion
+-->
+<script type="text/javascript">
+    function loopAnimacion(){
+        jQuery(".XXX").animate({'margin-top' : "-=4px"},1200).animate({ 'margin-top' :"+=4px"},1200);
+        setTimeout("loopAnimacion()",2400);
+    };
+</script>
+
+
+<!--
+  esta function ejecuta codigo dependiendo de algun valor que se le pasa por GET en la URL
+  1.- se crea una variable "direccion" en donde se divide la url segun el o los caracteres seleccionados "#"
+  2.- se selecciona con cual segmento de la url se dividira... en este caso en un #
+  3.- despues hacemos un if en donde evaluamos si la url contiene el valor que buscamos, en cuyo caso ejecutamos el codigo
+-->
+<script type="text/javascript">
+  function cambiaSegunDatoGet(){
+    var direccion = document.URL.split('#')[1];
+    if (direccion == 'eldatoquesolicitamos'){
+      alert('funciona');
+    };
+  }
+</script>
+
+
+<!--
+  animacion de entrada en jQuery
+  1.- a un div de entrada con un estilo css determinado, se le aplica otro estilo css y se le anima para que el cambio sea fluido */
+-->
+<script type="text/javascript">
+  function animaInicio(){
+    jQuery('#XXX1').delay(1500).animate({'margin-top' :'90px', 'margin-left' :'100px', "opacity": "toggle"}, 400);
+    jQuery('#XXX2').delay(1500).animate({'margin-top' :'2px', 'margin-left' :'5px', "opacity": "toggle"}, 400);
+  }
+</script>
+
+
+<!-- Condicional en caso de tener una secuencia de caracteres a evaluar -->
+<script type="text/javascript">
+  var d = parseInt(a.split('-')[0]); 						/* busca en la URL antes del caracter "-", el resultado inluirlo en la variable "d" */
+  if((d>1 && d<19) || (d>47 && d<56)){ 					/* si el resultado es 2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18 o  */
+    d="bano";
+  }else if( (d>18 && d<48)){								/* si el resultado esta entre el 18 y el 48 (sin incluirlos) devuelve lo siguiente */
+    d="cocina";
+  }else if((d>55 && d<64) || d==70 || d==71 || d==72){	/* si el resultado esta entre el 55 y el 64 (sin incluirlos) o si es 70, 71, 72 devuelve lo siguiente */
+    d="gas";
+  }else{
+    d=null;
+  }
+</script>
+
+<!-- if en javascript con un array de datos -->
+<script type="text/javascript">
+  $datos = Array('casa-vasconia-galeria','casa-cantabria-galeria','casa-navarra-galeria','casa-catania-galeria','casa-tarragona-galeria');<? // estos son los datos que busco?>
+  for (var i = 0; i < $datos.lenght; i++ ){
+    if($datos [i] == $thispage){ <? //si los valores declarados arriba coincide con el valor de la variable $thispage (declarado al comienzo de cada pagina) imprime el contenido ?>
+      <? // HACE ALGO ?>
+    }
+  }
+</script>
+
+
+<!-- estado Hover/Out en un div -->
+<script type="text/javascript">
+  function hoverout(){
+    jQuery('.fotos .op01').hover(
+      function () {
+        jQuery('.fotos .op01 .foto-sel').animate({'opacity' :'0.5'}, 150);
+      },
+      function () {
+        jQuery('.fotos .op01 .foto-sel').animate({'opacity' :'1'}, 150);
+      }
+    );
+  }
+</script>
+
+
+<!--
+  animacion de hover en jQuery (se debe poner la function en el documente ready para que este disponible)
+  1.- a un div determinado se le aplica una animacion al hacer hover
+  2.- se le aplican los mismos estilos que tenia por defecto para que quede como al inicio
+-->
+<script type="text/javascript">
+  function animac() {
+    jQuery('#XXX').hover(function(){
+      jQuery('#XXX').animate({'margin-top' :'140px', 'margin-left' :'68px'}, 150);
+    }, function(){
+      jQuery('#XXX').animate({'margin-top' :'145px', 'margin-left' :'65px'}, 150);
+    });
+  }
+</script>

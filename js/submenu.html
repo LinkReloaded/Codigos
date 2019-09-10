@@ -1,0 +1,21 @@
+<!-- submenu simple en jQuery: en un elemento de menu "a" se  genera un div oculto que se muestra/oculta al hacer rollover sobre el mismo -->
+<script type="text/javascript">
+  function cambiaMenu(){
+    jQuery('.menu1').mouseover(function(){
+      jQuery('.menu2').show();
+    });
+    jQuery('.menuWrapper').mouseleave(function(){
+      jQuery('.menu2').hide();
+    });
+  }
+</script>
+<style type="text/css">
+  .menuWrapper {background:gray; padding:5px; width:70px}
+  .menuWrapper div {height:100px; width:70px}
+  .menu1 {background:red}
+  .menu2 {background:blue; display:none}
+</style>
+<div class="menuWrapper">
+  <div class="menu1">Menu 1</div>
+  <div class="menu2">Menu 2</div>
+</div>

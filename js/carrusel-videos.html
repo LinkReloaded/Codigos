@@ -1,0 +1,10 @@
+<script>
+			jQuery(document).ready(function(){
+		    	jQuery("#<?= $field['data-target']; ?>").on('shown.bs.modal', function () {
+		    		jQuery("#video-<?= $field['data-target']; ?>").html("<source src='<?= $field['video_tip']; ?>' type='video/mp4'>Your browser does not support the video tag.");
+		       	});
+				jQuery("#<?= $field['data-target']; ?>").on('hide.bs.modal', function () {
+					jQuery("#video-<?= $field['data-target']; ?>").replaceWith("<video width='100%' height='auto' controls id='video-<?= $field['data-target']; ?>'></video>");
+				});
+			});
+</script>

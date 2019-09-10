@@ -1,0 +1,18 @@
+var title = document.title;
+
+var frases = ["titulo 01","titulo 02","titulo 03"];
+
+window.onfocus = function() {
+    document.title = title;
+};
+
+  window.onblur = function() {
+	document.title = frases[getRandomInt(0, frases.length - 1)];
+	/*setTimeout(function() {
+		document.title = title
+	}, 3000);*/
+  };
+
+  function getRandomInt(min, max) {
+	  return Math.floor(Math.random() * (max - min + 1) + min);
+  }

@@ -1,0 +1,39 @@
+<!--
+    shadowbox IMG autocarga
+    1.- despues de llamar al SB se inicia con el siguiente script
+-->
+<script type="text/javascript">
+    window.onload = function() {
+        Shadowbox.open({
+            content:    'XXXXX/imagenes/img.jpg', <? // ruta de la imagen ?>
+            player:     "img",  <? // player de la imgen ?>
+            height:     500,    <? // alto de la imagen ?>
+            width:      1000    <? // ancho de la imagen ?>
+        });
+    };
+</script>
+
+<!--
+    shadowbox URL abre al click
+    1.- poner el "REL" en la etiqueta a seleccionada, definir el ancho y alto de acuerdo al documento a abrir
+-->
+<a href="#" rel="shadowbox;width=442;height=403">XXX</a>
+<script type="text/javascript">
+    // <![CDATA[
+    var ipad = (/ipad/i.test(navigator.userAgent.toLowerCase()));
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()))
+    if (ipad) {
+        document.location = "http://sitioipad";
+    } else if (mobile) {
+        document.location = "http://sitiomobile";
+    }  else {
+        document.location = "http://sitionormal";
+    }
+    // ]]>
+</script>
+<html>
+    <head></head>
+    <body>
+        <script type="text/javascript">window.location="http://www.renault.cl/new-symbol/";</script>
+    </body>
+</html>
