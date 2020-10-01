@@ -22,3 +22,10 @@
 <? endwhile; else : ?>
 	<!-- contenido 02 -->
 <? endif; ?>
+<!-- DETECTA EL TIPO DE POST E IMPRIME EL CONTENIDO -->
+<? 
+	$elpostespecial = get_post_type( $post );
+	if ($elpostespecial=="post-name"){
+		echo "correcto";
+	} 
+?>
