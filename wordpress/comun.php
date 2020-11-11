@@ -103,3 +103,6 @@ http://www.website.com/?post_type=XXX
 
 <!-- menu editable, explicacion de uso conocido. 'container_class' => 'clase del div contenedor', 'theme_location' => 'nombre del menu, debe ser = al nombre que lleva en el function' -->
 <? wp_nav_menu( array( 'container_class' => 'menu_ppal', 'theme_location' => 'topmenu' ) ); ?>
+
+<!-- enviar mensaje a WA -->
+https://wa.me/56992398598?text=Hola%20me%20gustaría%20saber%20más%20información
