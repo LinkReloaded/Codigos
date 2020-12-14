@@ -33,3 +33,10 @@
 
 <!-- resetear el loop de WP, poner esa funcion despues de cerrar el loop -->
 <? endwhile; wp_reset_query(); ?>
+
+<!-- Loop de un post en especifico -->
+<?php $recent = new WP_Query('p='.$ELIDDELPOST.'&post_type=post'); while($recent->have_posts()) : $recent->the_post(); ?>
+<?php the_title(); ?>
+<?php the_post_thumbnail('img537x359'); ?>
+<?php the_permalink(); ?>
+<?php endwhile; wp_reset_query(); ?>
