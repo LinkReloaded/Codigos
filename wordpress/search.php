@@ -6,3 +6,15 @@
         <input type="submit" id="searchsubmit" value=''>
   </div>
 </form>
+
+
+<?php if ( have_posts() ) : // busqueda con resultados ?>
+
+	ITEM 
+
+<?php else: // busqueda sin resultados ?>
+
+	MENSAJE
+
+<?php endif; ?>	
+

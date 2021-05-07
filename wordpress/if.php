@@ -48,3 +48,21 @@
 		break;
 	}
 ?>
+
+<?php get_header(); ?>
+<section id="contenido">
+
+<!-- if (por tipo de pagina) -->
+<?php 
+
+	if(is_page()){ /* Si soy PAGINA */ };
+	
+	if(is_single()){ /* Si soy ARTICULO */ };
+
+	if(is_archive()){ /* Si soy ARCHIVO */ };
+	
+	if(is_search()){ /* Si soy RESULTADO DE LA BUSQUEDA */ };
+
+	if(is_404()){ /* Si soy CONTENIDO NO ENCONTRADO */ };
+
+?>
