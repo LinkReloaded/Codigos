@@ -59,9 +59,6 @@ http://www.website.com/?post_type=XXX
 	*/
 ?>
 
-<!-- lista la fecha en que fue publicado el post-->
-<? the_time('d/m/y'); ?>
-
 <!-- imprimir el nombre de una plantilla -->
 <? 	$plantilla =  str_replace(".php", "", get_page_template_slug( $post->ID ) );echo $plantilla;  ?>
 
@@ -79,27 +76,6 @@ http://www.website.com/?post_type=XXX
 	$wp->register_globals();$wp->send_headers();
 ?>
 
-<!-- coloca un numero de palabras determinadas en el extracto (USAR DENTRO DEL LOOP) y usar esta funcion tambien en functions.php -->
-<?= excerpt(35); ?>
-
-<!-- asignar variable dependiendo de la pagina en donde este -->
-<?
-	$paginaActual = get_the_ID();
-	switch ($paginaActual) {
-		case "10":
-		$variable = "nombre1";
-		break;
-	case "12":
-		$variable = "nombre2";
-		break;
-	case "14":
-		$variable = "nombre3";
-		break;
-	default:
-		$variable = "nombre por defecto";
-		break;
-	}
-?>
 
 <!-- menu editable, explicacion de uso conocido. 'container_class' => 'clase del div contenedor', 'theme_location' => 'nombre del menu, debe ser = al nombre que lleva en el function' -->
 <? wp_nav_menu( array( 'container_class' => 'menu_ppal', 'theme_location' => 'topmenu' ) ); ?>
