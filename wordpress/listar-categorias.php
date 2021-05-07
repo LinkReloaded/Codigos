@@ -38,13 +38,6 @@
 	?>
 </ul>
 
-<!--MUETRA 3 POSTS POR PÃGINA DE LA CATEGORÃA 3-->
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="article"><!--ESTRUCTURA ARTICULO --></div>
-<?php endwhile; ?>
-<div class="paginador"><?php posts_nav_link(' &#183; ', 'P&aacute;gina anterior', 'P&aacute;gina siguiente'); ?></div>
-<?php endif; wp_reset_query(); ?>
-
 <!-- obtener el nombre de la categoria -->
 <?
 	$category = get_the_category(); //obtengo la info de las categorias
@@ -151,3 +144,6 @@ DESCRIPCION: <?php echo category_description( $category_id ); ?>
 	if($boolPertenece) {?>
 	<!-- el contenido -->
 <? } ?>
+
+<!-- lista las categorias que tiene post como <a>XXXX</a><br/> -->
+<?php wp_list_categories('orderby=id&show_count=0&title_li=&use_desc_for_title=1&child_of=1&hierarchical=0&style=none&hide_empty=1');  ?>
