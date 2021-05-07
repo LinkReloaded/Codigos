@@ -1,7 +1,7 @@
-<!-- Loop simple -->
+<!-- Loop simple, con reseteador de query -->
 <? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<? the_content(); ?>
-<? endwhile; endif; ?>
+<? endwhile; endif; wp_reset_query(); ?>
 
 <!-- Loop con condiciones, en este caso muestra "2" post de la categoria "3" -->
 <? $recent = new WP_Query("showposts=2&cat=3"); while($recent->have_posts()) : $recent->the_post();?>
