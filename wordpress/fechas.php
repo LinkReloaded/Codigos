@@ -3,3 +3,6 @@
 
 <!-- poner horas en los post ej: Publicado a las 19:15 -->
 Publicado a las <?php the_time('g:i'); ?>
+
+<!-- lista la fecha en que fue publicado el post-->
+<? the_time('d/m/y'); ?>
