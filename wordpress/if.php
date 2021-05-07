@@ -29,3 +29,22 @@
 		echo "correcto";
 	} 
 ?>
+
+<!-- asignar variable dependiendo de la pagina en donde este -->
+<?
+	$paginaActual = get_the_ID();
+	switch ($paginaActual) {
+		case "10":
+		$variable = "nombre1";
+		break;
+	case "12":
+		$variable = "nombre2";
+		break;
+	case "14":
+		$variable = "nombre3";
+		break;
+	default:
+		$variable = "nombre por defecto";
+		break;
+	}
+?>
