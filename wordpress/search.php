@@ -18,3 +18,6 @@
 
 <?php endif; ?>	
 
+<!-- obtener la palabra a buscar -->
+<?php echo get_search_query(); ?>
+
