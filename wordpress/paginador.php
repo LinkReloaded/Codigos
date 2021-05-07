@@ -9,3 +9,12 @@
 
 <!-- categoria -->
 <?  if(function_exists('utom_pagenavi')) { utom_pagenavi(); } ?>
+
+<!-- paginador numerico -->
+<div class="paginador">
+	<?php the_posts_pagination( array(
+	    'mid_size'  => 2,
+	    'prev_text' => __( 'label next', 'textdomain' ),
+	    'next_text' => __( 'label prev', 'textdomain' ),
+	) ); ?>
+</div>
