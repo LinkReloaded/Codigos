@@ -82,3 +82,7 @@ http://www.website.com/?post_type=XXX
 
 <!-- enviar mensaje a WA -->
 https://wa.me/56992398598?text=Hola%20me%20gustaría%20saber%20más%20información
+
+<!-- crear cita en google calendar -->
+https://calendar.google.com/calendar/u/0/r/eventedit?text=Gu%C3%ADa+para+Aprender+Seguridad+Inform%C3%A1tica&dates=20210414Z22:00:00T/20210414Z22:00:00T&details=%C2%A1Inicia+tu+camino+para+aprender+seguridad+inform%C3%A1tica!+Conoce+el+concepto+de+ciberseguridad+en+las+organizaciones+y+explora+las+diferentes+ramas+como+pentesting,+ciberinteligencia,+seguridad+en+redes+y+m%C3%A1s,+a+trav%C3%A9s+de+historias+y+conceptos+fundamentales&sf=true
+
